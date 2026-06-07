@@ -10,7 +10,7 @@
 </p>
 
 ## 1. Overview
-This is a native Android application that functions like a classic handheld stopwatch. It measures the time elapsed between activation and deactivation with centisecond precision. The app uses a clean, modern interface and is fully responsive.
+This is a native Android application that functions like a classic handheld stopwatch. It measures the time elapsed between activation and deactivation with centisecond precision. The app uses a clean, modern interface optimized for Android phone screens.
 
 ## 2. Internship Information
 * **Organization:** Oasis Infobyte
