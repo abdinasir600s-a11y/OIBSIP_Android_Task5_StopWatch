@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_main.xml
+    Stop Watch — Oasis Infobyte Android Application Development Internship
+    Task 5: Stop Watch
+    Author: Abdinasir Osman Warsame
+
+    Layout structure:
+      ScrollView (ensures content is visible on small screens)
+        LinearLayout (root, vertical)
+          ── Header (logo + title + subtitle)
+          ── Timer Card (white rounded card + large time display)
+          ── Buttons Section (START / HOLD / STOP)
+-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="80dp"
+        android:paddingBottom="40dp">
+
+        <!-- ══════════════════════════════════════════
+             HEADER SECTION
+             ══════════════════════════════════════════ -->
+
+        <!-- App icon inside a circular CardView with soft shadow -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center_horizontal"
+            app:cardCornerRadius="48dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@android:color/white"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/app_name" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- App title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/text_dark"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.04"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_subtitle"
+            android:textColor="@color/text_gray"
+            android:textSize="14sp"
+            android:layout_marginBottom="36dp" />
+
+        <!-- ══════════════════════════════════════════
+             TIMER CARD
+             ══════════════════════════════════════════ -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_card"
+            android:paddingTop="36dp"
+            android:paddingBottom="36dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:layout_marginBottom="36dp"
+            android:elevation="4dp">
+
+            <!-- "Elapsed Time" label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Elapsed Time"
+                android:textColor="@color/text_gray"
+                android:textSize="13sp"
+                android:letterSpacing="0.12"
+                android:textAllCaps="true"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Main timer display: HH:MM:SS.CS -->
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/timer_default"
+                android:textColor="@color/text_dark"
+                android:textSize="44sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace"
+                android:letterSpacing="-0.02"
+                android:singleLine="true"
+                android:gravity="center"
+                android:includeFontPadding="false" />
+
+            <!-- Thin accent line under the clock -->
+            <View
+                android:layout_width="80dp"
+                android:layout_height="3dp"
+                android:background="@color/primary_blue"
+                android:layout_marginTop="20dp" />
+
+        </LinearLayout>
+
+        <!-- ══════════════════════════════════════════
+             BUTTONS SECTION — Three circular buttons
+             ══════════════════════════════════════════ -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="0dp">
+
+            <!-- START (circle) -->
+            <Button
+                android:id="@+id/btn_start"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:text="@string/btn_start"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.08"
+                android:background="@drawable/bg_btn_start"
+                android:stateListAnimator="@null"
+                android:layout_marginEnd="18dp" />
+
+            <!-- HOLD / RESUME (circle) -->
+            <Button
+                android:id="@+id/btn_hold"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:text="@string/btn_hold"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.08"
+                android:background="@drawable/bg_btn_hold"
+                android:stateListAnimator="@null"
+                android:layout_marginEnd="18dp" />
+
+            <!-- STOP (circle) -->
+            <Button
+                android:id="@+id/btn_stop"
+                android:layout_width="88dp"
+                android:layout_height="88dp"
+                android:text="@string/btn_stop"
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.08"
+                android:background="@drawable/bg_btn_stop"
+                android:stateListAnimator="@null" />
+
+        </LinearLayout>
+
+        <!-- ══════════════════════════════════════════
+             FOOTER
+             ══════════════════════════════════════════ -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oasis Infobyte · Task 5 · Stop Watch"
+            android:textColor="@color/text_gray"
+            android:textSize="12sp"
+            android:layout_marginTop="40dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="by Abdinasir Osman Warsame"
+            android:textColor="@color/text_gray"
+            android:textSize="12sp"
+            android:layout_marginTop="2dp" />
+
+    </LinearLayout>
+</ScrollView>

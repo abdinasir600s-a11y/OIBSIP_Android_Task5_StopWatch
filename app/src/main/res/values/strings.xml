@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stop Watch</string>
+    <string name="app_subtitle">Track your time quickly and easily</string>
+    <string name="btn_start">START</string>
+    <string name="btn_hold">HOLD</string>
+    <string name="btn_resume">RESUME</string>
+    <string name="btn_stop">STOP</string>
+    <string name="timer_default">00:00:00.00</string>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Colors -->
+    <color name="primary_blue">#1E88E5</color>
+    <color name="deep_navy">#071B33</color>
+    <color name="accent_purple">#6D28D9</color>
+    <color name="light_background">#F5F7FA</color>
+    <color name="card_white">#FFFFFF</color>
+    <color name="text_dark">#10202A</color>
+    <color name="text_gray">#6B7280</color>
+    <color name="error_red">#E53935</color>
+    <color name="success_green">#2E7D32</color>
+
+    <!-- Derived / semantic -->
+    <color name="btn_start_bg">#1E88E5</color>
+    <color name="btn_hold_bg">#6D28D9</color>
+    <color name="btn_stop_bg">#E53935</color>
+    <color name="divider">#E0E4EB</color>
+    <color name="card_shadow">#1A071B33</color>
+</resources>
